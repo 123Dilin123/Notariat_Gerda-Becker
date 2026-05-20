@@ -297,16 +297,39 @@
                 </div>
             </div>
 
-            <!-- Das Testament (Hidden) -->
-            <div id="testament-view">
-                <p style="font-size: 0.9rem; text-align: right; margin-bottom: 40px;">Urkundenrolle Nr. 884/2026</p>
-                <h2 style="text-align: center; border-bottom: 2px solid #000; padding-bottom: 10px;">LETZTWILLIGE VERFÜGUNG</h2>
-                <p>Ich, der unterzeichnende Erblasser, bestimme für den Fall meines Todes Folgendes:</p>
-                <p><strong>1. Miterbenentzug:</strong> Meine leiblichen Kinder setze ich hiermit ausdrücklich auf den <strong>gesetzlichen Pflichtteil</strong>. Mein Sohn hat durch wiederholte geschäftliche Inkompetenz mein Vertrauen missbraucht. Meine Tochter hat sich durch ihren alternativen Lebenswandel bewusst von meinen Werten distanziert.</p>
-                <p><strong>2. Einsetzung der Alleinerbin:</strong> Zu meiner <strong>unbeschränkten Alleinerbin</strong> des gesamten Vermögens setze ich meine langjährige Finanzberaterin ein. Sie allein hat bewiesen, dass sie mein Lebenswerk mit Verstand und Loyalität verwalten kann.</p>
-                <br><br><br>
-                <p style="text-align: center;"><em>Gez. Dr. Gerda Becker (Notarin)</em></p>
-            </div>
+        
+             <!-- Das Dokument (Rechtssicher überarbeitet) -->
+        <div id="testament-view">
+            <p style="font-size: 0.85rem; text-align: right; font-weight: bold; margin-bottom: 30px;">Urkundenrolle Nr. 884/2026</p>
+            
+            <h2>Niederschrift über ein Testament</h2>
+            
+            <p>Heute, am 20. Mai 2026, erschien vor mir, <strong>Dr. Gerda Becker</strong>, Notarin mit dem Amtssitz in Halle (Saale), in meinen Geschäftsräumen:</p>
+            <p>Herr <strong>[Name des Erblassers]</strong>, nachfolgend „der Erblasser“ genannt, ausgewiesen durch gültigen Bundespersonalausweis.</p>
+            <p>Der Erblasser bat um die Beurkundung seines letzten Willens und erklärte diesen zur Niederschrift der Notarin wie folgt:</p>
+
+            <h3>I. Erbeinsetzung</h3>
+            <p>Zu meiner unbeschränkten Alleinerbin meines gesamten Vermögens setze ich meine langjährige, gewissenhafte Finanzberaterin, Frau <strong>[Name der Finanzberaterin]</strong>, ein. Sie allein hat bewiesen, dass sie mein Lebenswerk mit Verstand und Loyalität verwalten und in meinem Sinne fortführen kann.</p>
+
+            <h3>II. Ausschluss von der gesetzlichen Erbfolge (Enterbung)</h3>
+            <p>Meine leiblichen Kinder, [Sohn] und [Tochter], schließe ich hiermit ausdrücklich von der gesetzlichen Erbfolge aus. Sie werden somit nicht meine Erben.</p>
+            <p>Zu den Gründen dieser Verfügung mache ich folgende Angaben, die nach meinem Willen ausdrücklich in diese Urkunde aufgenommen werden sollen:</p>
+            <ul>
+                <li>Mein Sohn hat durch wiederholte geschäftliche Inkompetenz und das Anhäufen immenser Schulden mein Vertrauen in schwerwiegender Weise missbraucht.</li>
+                <li>Meine Tochter hat sich durch ihren alternativen Lebenswandel in einer Kommune bewusst von meinen Werten distanziert.</li>
+            </ul>
+
+            <h3>III. Pflichtteil und Belehrung</h3>
+            <p>Mir ist bekannt, dass meinen Kindern durch diesen Ausschluss Pflichtteilsansprüche in Geld gegen meine Alleinerbin zustehen. Ein vollständiger Entzug auch dieses gesetzlichen Pflichtteils wird hier ausdrücklich nicht angeordnet, da mir bewusst ist, dass die gesetzlichen Voraussetzungen für einen Pflichtteilsentzug nach § 2333 BGB nicht vorliegen.</p>
+
+            <h3>IV. Schlussbestimmungen</h3>
+            <p>Diese Niederschrift wurde dem Erblasser von der Notarin vorgelesen, von ihm genehmigt und vom Erblasser sowie der Notarin eigenhändig wie folgt unterzeichnet.</p>
+            
+            <br><br>
+            <p style="line-height: 1;"><em>gez. [Unterschrift des Vaters/Erblassers]</em></p>
+            <p style="font-size: 0.9rem; color: #555; line-height: 1;">(Dienstsiegel der Notarin)</p>
+            <p style="line-height: 1;"><em>gez. Dr. Gerda Becker (Notar)</em></p>
+        </div>
         </div>
     </section>
 </div>
@@ -321,7 +344,7 @@
         const pw = document.getElementById('passwort').value;
 
         // Logik: Urkundennummer 884/2026 und Passwort Tradition_1920
-        if(nr === "884/2026" && pw === "Tradition_1920") {
+        if(nr === "884/2026" && pw === "TRADITION_1920") {
             document.getElementById('testament-view').style.display = 'block';
             window.scrollTo({
                 top: document.getElementById('testament-view').offsetTop - 100,
