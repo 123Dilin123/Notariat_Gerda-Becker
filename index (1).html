@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanzlei Dr. Gerda Becker | Erb- & Familienrecht</title>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark-brown: #2B1B17;
+            --black: #0a0a0a;
+            --text-light: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--black);
+            color: var(--text-light);
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Stilvolle Schnörkel & Gold-Elemente */
+        .ornament {
+            color: var(--gold);
+            text-align: center;
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        header {
+            background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)), 
+                        url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=1500'); /* Holz/Bibliothek Hintergrund */
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+        }
+
+        h1 {
+            color: var(--gold);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .slogan {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .news-banner {
+            background-color: var(--dark-brown);
+            border: 1px solid var(--gold);
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 15px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: var(--dark-brown);
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* Login Bereich */
+        .login-box {
+            background: var(--dark-brown);
+            padding: 30px;
+            border: 2px solid var(--gold);
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: #1a1a1a;
+            border: 1px solid var(--gold);
+            color: white;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 15px 30px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+        }
+
+        /* Team Sektion */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            background: #1a1a1a;
+            padding: 15px;
+            border-top: 3px solid var(--gold);
+            text-align: center;
+        }
+
+        .team-member h3 { color: var(--gold); margin-bottom: 5px; }
+        .team-member p { font-size: 0.85rem; color: #bbb; }
+
+        /* Testament Ansicht (versteckt) */
+        #testament-view {
+            display: none;
+            background: #fdfdfd;
+            color: #333;
+            padding: 50px;
+            margin-top: 30px;
+            border: 1px solid #ccc;
+            font-family: 'Times New Roman', serif;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.8);
+        }
+
+        #testament-view h2 { text-align: center; font-size: 1.6rem; margin-bottom: 25px; text-transform: uppercase; }
+        #testament-view h3 { font-size: 1.1rem; border-bottom: 1px solid #333; margin-top: 20px; padding-bottom: 3px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Dr. Gerda Becker</h1>
+    <div class="slogan">Tradition bewahren. Zukunft sichern.</div>
+    <div class="ornament">❧</div>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#team">Kanzlei</a>
+    <a href="#database">Digitale Datenbank</a>
+</nav>
+
+<div class="container">
+    <div class="news-banner">
+        <strong>Aktuelles:</strong> Unser Team befindet sich derzeit auf einer Kanzleiklausur im Ausland. 
+        Das Büro ist bis kommenden Montag nicht persönlich besetzt.
+    </div>
+
+    <section id="database">
+        <h2>Digitale Datenbank</h2>
+        <p><strong>Sicherheit durch Innovation: Ihr digitales Nachlass-Archiv</strong><br>
+        Bitte geben Sie Ihre Urkunden-Nummer und Ihr Passwort ein, um Ihre Unterlagen sicher als PDF einzusehen.</p>
+        
+        <div class="login-box">
+            <label>Urkunden-Nummer:</label>
+            <input type="text" id="urkundenNr" placeholder="z.B. 884/2026">
+            <label>Passwort:</label>
+            <input type="password" id="passwort" placeholder="••••••••">
+            <button onclick="checkAccess()">Dokument abrufen</button>
+        </div>
+
+        <!-- Das Dokument (Rechtssicher überarbeitet) -->
+        <div id="testament-view">
+            <p style="font-size: 0.85rem; text-align: right; font-weight: bold; margin-bottom: 30px;">Urkundenrolle Nr. 884/2026</p>
+            
+            <h2>Niederschrift über ein Testament</h2>
+            
+            <p>Heute, am 20. Mai 2026, erschien vor mir, <strong>Dr. Gerda Becker</strong>, Notarin mit dem Amtssitz in Halle (Saale), in meinen Geschäftsräumen:</p>
+            <p>Herr <strong>[Name des Erblassers]</strong>, nachfolgend „der Erblasser“ genannt, ausgewiesen durch gültigen Bundespersonalausweis.</p>
+            <p>Der Erblasser bat um die Beurkundung seines letzten Willens und erklärte diesen zur Niederschrift der Notarin wie folgt:</p>
+
+            <h3>I. Erbeinsetzung</h3>
+            <p>Zu meiner unbeschränkten Alleinerbin meines gesamten Vermögens setze ich meine langjährige, gewissenhafte Finanzberaterin, Frau <strong>[Name der Finanzberaterin]</strong>, ein. Sie allein hat bewiesen, dass sie mein Lebenswerk mit Verstand und Loyalität verwalten und in meinem Sinne fortführen kann.</p>
+
+            <h3>II. Ausschluss von der gesetzlichen Erbfolge (Enterbung)</h3>
+            <p>Meine leiblichen Kinder, [Sohn] und [Tochter], schließe ich hiermit ausdrücklich von der gesetzlichen Erbfolge aus. Sie werden somit nicht meine Erben.</p>
+            <p>Zu den Gründen dieser Verfügung mache ich folgende Angaben, die nach meinem Willen ausdrücklich in diese Urkunde aufgenommen werden sollen:</p>
+            <ul>
+                <li>Mein Sohn hat durch wiederholte geschäftliche Inkompetenz und das Anhäufen immenser Schulden mein Vertrauen in schwerwiegender Weise missbraucht.</li>
+                <li>Meine Tochter hat sich durch ihren alternativen Lebenswandel in einer Kommune bewusst von meinen Werten distanziert.</li>
+            </ul>
+
+            <h3>III. Pflichtteil und Belehrung</h3>
+            <p>Mir ist bekannt, dass meinen Kindern durch diesen Ausschluss Pflichtteilsansprüche in Geld gegen meine Alleinerbin zustehen. Ein vollständiger Entzug auch dieses gesetzlichen Pflichtteils wird hier ausdrücklich nicht angeordnet, da mir bewusst ist, dass die gesetzlichen Voraussetzungen für einen Pflichtteilsentzug nach § 2333 BGB nicht vorliegen.</p>
+
+            <h3>IV. Schlussbestimmungen</h3>
+            <p>Diese Niederschrift wurde dem Erblasser von der Notarin vorgelesen, von ihm genehmigt und vom Erblasser sowie der Notarin eigenhändig wie folgt unterzeichnet.</p>
+            
+            <br><br>
+            <p style="line-height: 1;"><em>gez. [Unterschrift des Vaters/Erblassers]</em></p>
+            <p style="font-size: 0.9rem; color: #555; line-height: 1;">(Dienstsiegel der Notarin)</p>
+            <p style="line-height: 1;"><em>gez. Dr. Gerda Becker (Notar)</em></p>
+        </div>
+    </section>
+
+    <div class="ornament">❧</div>
+
+    <section id="team">
+        <h2>Unser Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <h3>Dr. Gerda Becker</h3>
+                <p>Notarin & Kanzleigründerin</p>
+            </div>
+            <div class="team-member">
+                <h3>Elias Mansour</h3>
+                <p>Assoziierter Rechtsanwalt</p>
+            </div>
+            <div class="team-member">
+                <h3>Sarah Chen</h3>
+                <p>Notariatsverwalterin</p>
+            </div>
+            <div class="team-member">
+                <h3>Mateo Rossi</h3>
+                <p>Rechtsanwaltsfachangestellter</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    function checkAccess() {
+        const nr = document.getElementById('urkundenNr').value.trim();
+        const pw = document.getElementById('passwort').value.trim();
+
+        // Logik: Urkundennummer 884/2026 und Passwort 18052026_Waldvilla
+        if(nr === "884/2026" && pw === "18052026_Waldvilla") {
+            document.getElementById('testament-view').style.display = 'block';
+            window.scrollTo({
+                top: document.getElementById('testament-view').offsetTop - 100,
+                behavior: 'smooth'
+            });
+        } else {
+            alert("Zugriff verweigert. Bitte prüfen Sie Ihre Eingaben.");
+        }
+    }
+</script>
+
+</body>
+</html>
